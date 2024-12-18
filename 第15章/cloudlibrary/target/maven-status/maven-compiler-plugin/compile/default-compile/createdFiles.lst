@@ -1,0 +1,5 @@
+com\itheima\controller\ProblemController.class
+com\itheima\service\impl\ProblemServiceImpl.class
+com\itheima\mapper\ProblemMapper.class
+com\itheima\domain\Problem.class
+com\itheima\service\ProblemService.class

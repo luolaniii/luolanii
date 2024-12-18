@@ -1,0 +1,15 @@
+0:0:0:0:0:0:0:1 - - [18/Dec/2024:16:01:53 +0800] "GET /SSMFINAL HTTP/1.1" 302 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [18/Dec/2024:16:01:54 +0800] "GET /SSMFINAL/ HTTP/1.1" 200 2228 http-bio-8080-exec-3 227
+0:0:0:0:0:0:0:1 - - [18/Dec/2024:16:01:54 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-4 0
+0:0:0:0:0:0:0:1 - - [18/Dec/2024:16:02:58 +0800] "POST /SSMFINAL/login HTTP/1.1" 302 - http-bio-8080-exec-6 578
+0:0:0:0:0:0:0:1 - - [18/Dec/2024:16:02:58 +0800] "GET /SSMFINAL/admin/main.jsp HTTP/1.1" 200 3396 http-bio-8080-exec-8 29
+0:0:0:0:0:0:0:1 - - [18/Dec/2024:16:02:58 +0800] "GET /SSMFINAL/book/selectNewbooks HTTP/1.1" 200 7553 http-bio-8080-exec-9 235
+0:0:0:0:0:0:0:1 - - [18/Dec/2024:16:03:03 +0800] "GET /SSMFINAL/book/search HTTP/1.1" 200 19131 http-bio-8080-exec-10 92
+0:0:0:0:0:0:0:1 - - [18/Dec/2024:16:03:08 +0800] "GET /SSMFINAL/book/searchBorrowed HTTP/1.1" 200 3501 http-bio-8080-exec-10 57
+0:0:0:0:0:0:0:1 - - [18/Dec/2024:16:03:10 +0800] "GET /SSMFINAL/record/searchRecords HTTP/1.1" 200 3013 http-bio-8080-exec-10 53
+0:0:0:0:0:0:0:1 - - [18/Dec/2024:16:03:12 +0800] "GET /SSMFINAL/book/search HTTP/1.1" 200 19131 http-bio-8080-exec-10 26
+0:0:0:0:0:0:0:1 - - [18/Dec/2024:16:03:14 +0800] "GET /SSMFINAL/admin/main.jsp HTTP/1.1" 200 3396 http-bio-8080-exec-10 5
+0:0:0:0:0:0:0:1 - - [18/Dec/2024:16:03:14 +0800] "GET /SSMFINAL/book/selectNewbooks HTTP/1.1" 200 7553 http-bio-8080-exec-10 20
+0:0:0:0:0:0:0:1 - - [18/Dec/2024:16:03:16 +0800] "GET /SSMFINAL/book/search HTTP/1.1" 200 19131 http-bio-8080-exec-10 29
+0:0:0:0:0:0:0:1 - - [18/Dec/2024:16:03:22 +0800] "POST /SSMFINAL/book/search HTTP/1.1" 200 11377 http-bio-8080-exec-10 38
+0:0:0:0:0:0:0:1 - - [18/Dec/2024:16:03:31 +0800] "GET /SSMFINAL/book/findById?id=4 HTTP/1.1" 200 316 http-bio-8080-exec-10 132

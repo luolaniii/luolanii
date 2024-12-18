@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.ProblemMapper">
+
+    <!-- 查询所有问题 -->
+    <select id="selectAllProblems" resultMap="problemMap">
+        SELECT * FROM problem ORDER BY problem_time DESC
+    </select>
+
+    <!-- ResultMap 映射 -->
+    <resultMap id="problemMap" type="com.itheima.domain.Problem">
+        <id property="problemId" column="problem_id" />
+        <result property="problemUid" column="problem_uid" />
+        <result property="problemTitle" column="problem_title" />
+        <result property="problemPage" column="problem_page" />
+        <result property="problemContent" column="problem_content" />
+        <result property="problemLink" column="problem_link" />
+        <result property="problemStatus" column="problem_status" />
+        <result property="problemTime" column="problem_time" />
+    </resultMap>
+
+    <!-- 根据 ID 查询问题 -->
+    <select id="getProblemById" parameterType="int" resultMap="problemMap">
+        SELECT * FROM problem WHERE problem_id = #{id}
+    </select>
+
+    <!-- 条件查询问题 -->
+    <select id="searchProblems" parameterType="com.itheima.domain.Problem" resultMap="problemMap">
+            SELECT * FROM problem
+            WHERE 1=1
+            <if test="problemTitle != null">
+                AND problem_title LIKE CONCAT('%', #{problemTitle}, '%')
+            </if>
+            <if test="problemPage != null">
+                AND problem_page LIKE CONCAT('%', #{problemPage}, '%')
+            </if>
+            <if test="problemStatus != null">
+                AND problem_status = #{problemStatus}
+            </if>
+            ORDER BY problem_time DESC
+    </select>
+
+    <!-- 新增问题 -->
+    <insert id="addProblem" parameterType="com.itheima.domain.Problem">
+        INSERT INTO problem (problem_uid, problem_title, problem_page, problem_content, problem_link, problem_status, problem_time)
+        VALUES (#{problemUid}, #{problemTitle}, #{problemPage}, #{problemContent}, #{problemLink}, #{problemStatus}, #{problemTime})
+    </insert>
+
+    <!-- 编辑问题 -->
+    <update id="editProblem" parameterType="com.itheima.domain.Problem">
+            UPDATE problem
+            <set>
+                <if test="problemUid != null">problem_uid = #{problemUid},</if>
+                <if test="problemTitle != null">problem_title = #{problemTitle},</if>
+                <if test="problemPage != null">problem_page = #{problemPage},</if>
+                <if test="problemContent != null">problem_content = #{problemContent},</if>
+                <if test="problemLink != null">problem_link = #{problemLink},</if>
+                <if test="problemStatus != null">problem_status = #{problemStatus},</if>
+                <if test="problemTime != null">problem_time = #{problemTime}</if>
+            </set>
+            WHERE problem_id = #{problemId}
+    </update>
+
+</mapper>
